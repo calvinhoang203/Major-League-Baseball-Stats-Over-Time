@@ -1,118 +1,101 @@
-# Major League Baseball Stats Over Time
+# MLB History Data Analysis Dashboard
 
-This project scrapes, analyzes, and visualizes historical Major League Baseball data from baseball-almanac.com. It includes four main components:
+Baseball statistics analysis project with web scraping, database storage, and interactive visualizations.
 
-1. **Web Scraper**: Collects MLB historical data including World Series champions, league leaders in hitting and pitching, and team standings.
-2. **Database Import**: Imports the scraped data into a SQLite database.
-3. **Database Query**: Provides a command-line interface for querying the database.
-4. **Dashboard**: Visualizes the data using Streamlit.
+## Project Overview
+
+This project collects Major League Baseball historical data from 1975-2025 and presents it through an interactive dashboard. The data includes World Series champions, American League MVP winners, and team standings.
+
+## Features
+
+- **Web Scraping**: Automated data collection using Selenium
+- **Database Storage**: SQLite database with organized tables
+- **Interactive Dashboard**: Streamlit web application with visualizations
+- **Data Analysis**: Statistical insights and trends over 50 years
+
+## Setup Instructions
+
+### Requirements
+- Python 3.8+
+- Chrome browser (for web scraping)
+
+### Installation
+
+Clone the repository:
+```bash
+git clone <your-repo-url>
+cd Major-League-Baseball-Stats-Over-Time
+```
+
+Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+### Running the Programs
+
+Run all programs in order:
+
+**Web Scraper** (collects and cleans data):
+```bash
+python scraping/web_scraper.py
+```
+
+**Database Import** (creates SQLite database):
+```bash
+python scraping/db_import.py
+```
+
+**Database Query** (command-line interface):
+```bash
+python scraping/db_query.py
+```
+
+**Dashboard** (interactive web app):
+```bash
+streamlit run scraping/dashboard.py
+```
+
+## Data Sources
+
+- World Series Champions (1975-2025)
+- American League MVP Winners (1975-2025)  
+- American League Team Standings (2003-2018)
+
+## Dashboard Features
+
+- **Interactive filters**: Year ranges and team selection
+- **Multiple visualizations**: Bar charts, scatter plots, pie charts
+- **Real-time updates**: Charts respond to user input
+- **Data tables**: Raw data viewing and exploration
 
 ## Project Structure
 
 ```
-├── data/                  # Directory for CSV files
-├── database/              # Directory for SQLite database
-├── scraping/              # Python scripts
-│   ├── web_scraper.py     # Scrapes data from baseball-almanac.com
-│   ├── db_import.py       # Imports CSV files into SQLite database
-│   ├── db_query.py        # Command-line interface for querying the database
-│   └── dashboard.py       # Streamlit dashboard for visualizing the data
-├── requirements.txt       # Python dependencies
-└── README.md              # This file
+├── scraping/
+│   ├── web_scraper.py      # Data collection and cleaning
+│   ├── db_import.py        # CSV to SQLite conversion
+│   ├── db_query.py         # Command-line database queries
+│   └── dashboard.py        # Streamlit web dashboard
+├── data/                   # Generated CSV files
+├── database/               # SQLite database
+└── requirements.txt        # Python dependencies
 ```
 
-## Setup
+## Technologies Used
 
-1. Clone this repository:
-   ```
-   git clone https://github.com/yourusername/Major-League-Baseball-Stats-Over-Time.git
-   cd Major-League-Baseball-Stats-Over-Time
-   ```
+- **Python**: Core programming language
+- **Selenium**: Web scraping automation
+- **Pandas**: Data manipulation and analysis
+- **SQLite**: Database storage
+- **Streamlit**: Web dashboard framework
+- **Plotly**: Interactive visualizations
 
-2. Create a virtual environment and activate it:
-   ```
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
+## Dashboard Screenshot
 
-3. Install the required dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
+![Dashboard](dashboard_screenshot.png)
+*Interactive MLB History Dashboard showing World Series champions over time*
 
-4. Install Chrome and ChromeDriver for Selenium:
-   - Download Chrome from https://www.google.com/chrome/
-   - Download ChromeDriver from https://sites.google.com/chromium.org/driver/ and make sure it's in your PATH
+---
 
-## Usage
-
-### 1. Scrape Data
-
-Run the web scraper to collect data from baseball-almanac.com:
-
-```
-python scraping/web_scraper.py
-```
-
-This will create CSV files in the `data/` directory.
-
-### 2. Import Data into Database
-
-Import the CSV files into a SQLite database:
-
-```
-python scraping/db_import.py
-```
-
-This will create a SQLite database file in the `database/` directory.
-
-### 3. Query the Database
-
-Run the command-line interface to query the database:
-
-```
-python scraping/db_query.py
-```
-
-This will start an interactive session where you can:
-- Show table structure
-- Run custom SQL queries
-- Run predefined queries
-
-### 4. Visualize Data
-
-Run the Streamlit dashboard to visualize the data:
-
-```
-streamlit run scraping/dashboard.py
-```
-
-This will start a local web server and open the dashboard in your browser.
-
-## Features
-
-- **Web Scraper**:
-  - Scrapes World Series champions, hitting leaders, pitching leaders, and team standings
-  - Handles missing data and different table structures
-  - Uses a user agent to avoid being blocked
-
-- **Database Import**:
-  - Imports CSV files into a SQLite database
-  - Creates separate tables for each dataset
-  - Cleans column names for SQL compatibility
-
-- **Database Query**:
-  - Provides a command-line interface for querying the database
-  - Supports custom SQL queries
-  - Includes predefined queries for common analyses
-
-- **Dashboard**:
-  - Visualizes data using interactive charts
-  - Allows filtering by year range
-  - Supports custom analysis with SQL queries
-
-
-## Acknowledgments
-
-- Data source: [Baseball Almanac](https://www.baseball-almanac.com/)
-- Built with Python, Selenium, Pandas, SQLite, and Streamlit
+*Code the Dream Capstone Project - Python Data Analysis & Visualization*

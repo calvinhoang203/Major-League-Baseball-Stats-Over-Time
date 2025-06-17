@@ -4,6 +4,8 @@ import pandas as pd
 import os
 import sys
 
+# Database Query Program
+
 def connect_to_db():
     """Connect to the SQLite database"""
     db_path = "database/mlb_history.db"
