@@ -93,9 +93,6 @@ streamlit run scraping/dashboard.py
 
 ## Dashboard Screenshot
 
-![Dashboard](dashboard_screenshot.png)
+![Dashboard](image/dashboard_screenshot.png)
 *Interactive MLB History Dashboard showing World Series champions over time*
 
----
-
-*Code the Dream Capstone Project - Python Data Analysis & Visualization*
